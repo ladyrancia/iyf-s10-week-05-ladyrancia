@@ -2,48 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOM Practice</title>
-
+    <title>To-Do List</title>
     <style>
-        .highlight { background-color: yellow; }
-        .container { padding: 20px; border: 1px solid #ccc; }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        button {
+            margin-left: 10px;
+        }
+        .active {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <header id="main-header">
-        <h1>DOM Practice</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main class="container">
-        <article>
-            <h2 class="title">Article Title</h2>
-            <p class="content">This is the first paragraph.</p>
-            <p class="content">This is the second paragraph.</p>
-        </article>
-        
-        <section>
-            <h2>Form Section</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Name">
-                <input type="email" id="email" placeholder="Email">
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026</p>
-    </footer>
 
-    <!-- IMPORTANT: JS at the bottom -->
-    <script src="dom.js"></script>
+    <h1>My To-Do List</h1>
+
+    <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="What needs to be done?" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <!-- FILTERS -->
+    <div>
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="todo-list"></ul>
+
+    <p id="items-left">0 items left</p>
+
+    <button id="clear-completed">Clear Completed</button>
+
     <script src="app.js"></script>
 </body>
 </html>
